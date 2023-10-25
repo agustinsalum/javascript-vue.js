@@ -4,15 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="asset/css/style.css">
     <title>Vue</title>
 </head>
 
 <body>
     <div id="app">
-        <p> {{mensaje}}</p>
+        <h1> {{message}}</h1>
+        <h2> The value of the counter is: {{count}}</h2>
+        <button @click="count++">+</button>
+        <button @click="count--">-</button>
     </div>
 </body>
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-<script src="./js/index.js"></script>
+<script type="module" src="asset/js/index.js"></script>
 
 </html>
