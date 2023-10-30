@@ -10,10 +10,32 @@
 
 <body>
     <div id="app">
-        <h1> {{message}}</h1>
-        <h2> The value of the counter is: {{count}}</h2>
+        <div>
+            <h1> All buttons</h1>
+            <button @click="() => {
+                message = message.toUpperCase() ;
+                name = name.toUpperCase()
+            }"> UpperCase
+            </button>
+            <button @click="() => display = !display"> Show/Not show</button>
+        </div>
+        <!-- v-once is rendered only once, so it is not converted to uppercase -->
+        <div v-once>
+            <h1> {{message}}</h1>
+        </div>
+        <div>
+            <h2 v-text="name"></h2>
+        </div>
+        <h2 v-show="display" v-bind:class="style"> The value of the counter is: {{count}}</h2>
         <button @click="count++">+</button>
         <button @click="count--">-</button>
+
+        <div class="users" v-show="display">
+            <div v-for="user in users">
+                <p>{{user.name}}</p>
+                <p>{{user.username}}</p>
+            </div>
+        </div>
     </div>
 </body>
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>

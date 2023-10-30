@@ -2,7 +2,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100svh;
 }
 
 main>div {
@@ -11,4 +10,31 @@ main>div {
     align-items: center;
     gap: 2rem;
     flex-direction: column;
+}
+
+.users {
+    display: grid;
+    width: 100%;
+    gap: 5rem;
+    grid-auto-rows: 6rem;
+    grid-template-columns: repeat(auto-fill, minmax(6rem, 1fr));
+
+}
+
+.users>div {
+    display: grid;
+    border-radius: 1rem;
+    width: 100%;
+    aspect-ratio: 1;
+    background-color: #111;
+    color: white;
+    padding: 1rem;
+    place-items: center;
+
+}
+
+.count {
+    background: #3bdae6;
+    color: blue;
+
 }
