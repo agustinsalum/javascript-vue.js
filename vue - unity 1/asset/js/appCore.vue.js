@@ -9,7 +9,11 @@ export const appCore = {
             display: true,
             style: "count",
             // https://jsonplaceholder.typicode.com/users
-            users:users
+            users:users,
+            msjModel: "",
+            usersCant: 10,
+            usersItems: users
+
         };
     },
 }; 

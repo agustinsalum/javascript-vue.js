@@ -11,6 +11,16 @@
 <body>
     <div id="app">
         <div>
+            <h1> Mensaje con v-model: {{msjModel}} </h1>
+            <input type="text" v-model="msjModel"/>
+            <input type="number" v-model.lazy="usersCant"/>
+
+            <!-- It doesn't work because it is assigned and not returning a mutable value -->
+            <!-- <button @click="() => users = users.slice(0,usersCant)"> -->
+            <button @click="() => usersItems = users.slice(0,usersCant)">
+                update number of users
+            </button>
+
             <h1> All buttons</h1>
             <button @click="() => {
                 message = message.toUpperCase() ;
@@ -31,7 +41,7 @@
         <button @click="count--">-</button>
 
         <div class="users" v-show="display">
-            <div v-for="user in users">
+            <div v-for="user in usersItems">
                 <p>{{user.name}}</p>
                 <p>{{user.username}}</p>
             </div>
