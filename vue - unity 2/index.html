@@ -8,9 +8,22 @@
 </head>
 
 <body>
-    <div id="app">
-        <h1> {{message}} </h1>
-    </div>
+    <header>
+    </header>
+    <main id="app">
+        <div>
+            ORDER INLET
+            <div v-for="(value,key) in order">
+                <input type="text" :placeholder="key" v-model="value" />
+            </div>
+            <button> Add </button>
+        </div>
+        <div>
+            <h2> TOTAL AMOUNT OF ORDERS</h2>
+        </div>
+
+    </main>
+
 </body>
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 <script type="module" src="asset/js/index.js"></script>
