@@ -14,7 +14,9 @@
         <div>
             ORDER INLET
             <div v-for="(value,key) in order">
-                <input type="text" :placeholder="key" v-model="value" />
+                <input v-if="key == 'id' || key == 'status' || key == 'date'" type="text" :placeholder="key"
+                    v-model="value" readonly />
+                <input v-else type="text" :placeholder="key" v-model="value" />
             </div>
             <button> Add </button>
         </div>

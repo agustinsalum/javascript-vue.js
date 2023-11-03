@@ -1,7 +1,8 @@
 const order = {
-    id: '',
+    id: crypto.randomUUID(),
     status: true,
-    name:'',
+    date: new Date().toISOString().split("T")[0],
+    name: '',
     amount:'',
     price:'',
 }
