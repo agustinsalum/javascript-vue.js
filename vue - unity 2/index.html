@@ -13,15 +13,30 @@
     <main id="app">
         <div>
             ORDER INLET
+            <!-- key is id,name..etc. the value is the data that is added -->
             <div v-for="(value,key) in order">
                 <input v-if="key == 'id' || key == 'status' || key == 'date'" type="text" :placeholder="key"
-                    v-model="value" readonly />
-                <input v-else type="text" :placeholder="key" v-model="value" />
+                    v-model="order[key]" readonly />
+                <input v-else type="text" :placeholder="key" v-model="order[key]" />
             </div>
-            <button> Add </button>
+            <button @click="order_handler"> Add </button>
+        </div>
+        <hr>
+        <div>
+            <!-- <p v-for="(value,key) in order">{{value}}</p> -->
         </div>
         <div>
             <h2> TOTAL AMOUNT OF ORDERS</h2>
+            <div>
+                <div v-for="order in orderList">
+                    <div>
+                        <p>Name: {{order.name}}</p>
+                        <p>Date: {{order.date}}</p>
+                        <p>price: {{order.price}}</p>
+                    </div>
+                    <hr>
+                </div>
+            </div>
         </div>
 
     </main>
