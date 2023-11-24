@@ -12,6 +12,7 @@ export const appCore = {
                 price: '',
             },
             orderList: [],
+            cant_order: null,
         };
     },
 
@@ -31,6 +32,21 @@ export const appCore = {
             };
             /* console.log(this.orderList); */
 
-        }
-    }
-}
+        },
+    },
+
+    /* https://vuejs.org/guide/essentials/computed.html */
+    computed: {
+        order_quantity_list() {
+            return this.orderList.length;
+        },
+    },
+    watch: {
+        order_quantity_list: {
+            handler: function (init, final) {
+                this.cant_order = this.orderList.length;
+            },
+            deep: true,
+        },
+    },
+};
