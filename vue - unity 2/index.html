@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="asset/css/style.css">
     <title>Vue</title>
 </head>
 
@@ -29,12 +30,26 @@
             <h2> TOTAL ORDERS: {{cant_order}}</h2>
             <div>
                 <div v-for="order in orderList">
-                    <div>
+                    <div :class="order.status?'':classInactive">
                         <p>Name: {{order.name}}</p>
                         <p>Date: {{order.date}}</p>
                         <p>price: {{order.price}}</p>
+                        <button @click="()=>order.status = !order.status">Active/Inactive</button>
+                        <button @click="deleteHandler(order.id)">Delete</button>
                     </div>
-                    <hr>
+                    <hr />
+                </div>
+            </div>
+        </div>
+        <hr />
+        <div>
+            <button @click="fetchHandler"> All</button>
+            <div>
+                <div v-for="elem in all" :class="elem.status?'':classInactive">
+                    <!-- <p>id: {{elem.id}}</p>
+                    <p>Name: {{elem.title}}</p> -->
+                    <all :title="elem.title" :id="elem.id"> </all>
+                    <button @click="()=>elem.status = !elem.status">Active/Inactive</button>
                 </div>
             </div>
         </div>
